@@ -80,10 +80,22 @@ pip install -r requirements.txt
 python3 --version  # Should be 3.11+
 ```
 
+3. **Set Environment Variables for Offline Mode**:
+```bash
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+```
+These commands ensure the application works in offline mode without attempting to download models from the internet.
+
 ### Running Individual Cases
 
 Process a single case:
 ```bash
+# Set offline mode (if not already set)
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+
+# Run processing for a single case
 python3 round1b_offline.py \
   --input_dir case1/input \
   --input_json case1/challenge1b_input.json \
@@ -95,6 +107,11 @@ python3 round1b_offline.py \
 
 Process all test cases in batch:
 ```bash
+# Set offline mode (if not already set)
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+
+# Run batch processing for all cases
 python3 batch_run.py
 ```
 
